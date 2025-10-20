@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+scriptwriter_ml/__init__.py
+scriptwriter_ml/cli.py
+scriptwriter_ml/llm.py
+scriptwriter_ml/models.py
+scriptwriter_ml/stt.py
+scriptwriter_ml/transliteration.py
+scriptwriter_ml/tts.py
+scriptwriter_ml.egg-info/PKG-INFO
+scriptwriter_ml.egg-info/SOURCES.txt
+scriptwriter_ml.egg-info/dependency_links.txt
+scriptwriter_ml.egg-info/entry_points.txt
+scriptwriter_ml.egg-info/requires.txt
+scriptwriter_ml.egg-info/top_level.txt

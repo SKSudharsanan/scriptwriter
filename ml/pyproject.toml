@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scriptwriter-ml"
+version = "0.1.0"
+description = "Local AI utilities for ScriptWriter"
+readme = "README.md"
+authors = [{name = "ScriptWriter"}]
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "numpy>=1.26",
+  "soundfile>=0.12",
+]
+
+[project.optional-dependencies]
+transliteration = ["indic-transliteration>=2.3.59", "open-tamil>=0.9.0"]
+stt = [
+  "faster-whisper>=0.10.0",
+  "mlx-whisper>=0.3.0; platform_system == 'Darwin'",
+]
+tts = [
+  "TTS>=0.22.0",
+  "espeakng>=1.0.0",
+]
+llm = [
+  "llama-cpp-python>=0.2.83",
+  "mlx-lm>=0.10.0; platform_system == 'Darwin'",
+]
+
+[project.scripts]
+scriptwriter-cli = "scriptwriter_ml.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scriptwriter_ml*"]

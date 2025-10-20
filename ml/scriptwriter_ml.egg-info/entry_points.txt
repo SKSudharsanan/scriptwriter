@@ -1,0 +1,2 @@
+[console_scripts]
+scriptwriter-cli = scriptwriter_ml.cli:main

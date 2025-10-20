@@ -1,0 +1,49 @@
+Metadata-Version: 2.4
+Name: scriptwriter-ml
+Version: 0.1.0
+Summary: Local AI utilities for ScriptWriter
+Author: ScriptWriter
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.26
+Requires-Dist: soundfile>=0.12
+Provides-Extra: transliteration
+Requires-Dist: indic-transliteration>=2.3.59; extra == "transliteration"
+Requires-Dist: open-tamil>=0.9.0; extra == "transliteration"
+Provides-Extra: stt
+Requires-Dist: faster-whisper>=0.10.0; extra == "stt"
+Requires-Dist: mlx-whisper>=0.3.0; platform_system == "Darwin" and extra == "stt"
+Provides-Extra: tts
+Requires-Dist: TTS>=0.22.0; extra == "tts"
+Requires-Dist: espeakng>=1.0.0; extra == "tts"
+Provides-Extra: llm
+Requires-Dist: llama-cpp-python>=0.2.83; extra == "llm"
+Requires-Dist: mlx-lm>=0.10.0; platform_system == "Darwin" and extra == "llm"
+
+# ScriptWriter ML Toolkit
+
+Local-first Python utilities that power transliteration, speech pipelines, and quantised LLM helpers for the ScriptWriter desktop app.
+
+## Installation
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .[transliteration,stt,tts,llm]
+```
+
+### Optional dependencies
+
+- `transliteration`: English → Tamil phonetic keyboard powered by `indic-transliteration`
+- `stt`: Faster-Whisper + MLX optimised builds
+- `tts`: Coqui XTTS and eSpeak NG fallback
+- `llm`: llama.cpp / MLX bindings for local instruction models
+
+## CLI Usage
+
+```bash
+scriptwriter-cli transliterate --text "vanakkam" --mode tamil
+```
+
+When run without `--text`, the CLI reads from STDIN allowing rich text payloads from the Tauri bridge.

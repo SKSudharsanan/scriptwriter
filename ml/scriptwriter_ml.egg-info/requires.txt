@@ -1,0 +1,22 @@
+numpy>=1.26
+soundfile>=0.12
+
+[llm]
+llama-cpp-python>=0.2.83
+
+[llm:platform_system == "Darwin"]
+mlx-lm>=0.10.0
+
+[stt]
+faster-whisper>=0.10.0
+
+[stt:platform_system == "Darwin"]
+mlx-whisper>=0.3.0
+
+[transliteration]
+indic-transliteration>=2.3.59
+open-tamil>=0.9.0
+
+[tts]
+TTS>=0.22.0
+espeakng>=1.0.0
